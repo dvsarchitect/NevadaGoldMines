@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Start Board</title>
+    <link rel="stylesheet" href="https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/css/pre-start.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Pre-Start Board</h1>
+        <div class="date" id="current-date"></div>
+    </div>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('dna-share')">
+                DNA SHARE
+                <small id="dna-share-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('safety')">
+                SAFETY
+                <small id="safety-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('production')">
+                PRODUCTION
+                <small id="production-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('celebrate')">
+                CELEBRATE SUCCESS
+                <small id="celebrate-preview"></small>
+            </a>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main-content" id="center-display">
+            <img id="fullscreen-icon" src="https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/full.svg" alt="Fullscreen" class="fullscreen-icon" onclick="toggleFullscreen()">
+
+            <!-- DNA Share Section -->
+            <div id="dna-share" class="section">
+                <h2>DNA Share</h2>
+                <div class="input-group">
+                    <label for="dna-input">Enter DNA Share Information:</label>
+                    <textarea id="dna-input"></textarea>
+                </div>
+                <button class="save-button" onclick="saveData('dna-share', 'dna-input', null)">Save</button>
+                <button class="back-button" onclick="goToMain()">Back</button>
+                
+                <!-- Image for DNA Share section -->
+                <div class="dna-image-container">
+                    <img src="https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/dna.jpg" alt="DNA Share Image" class="dna-image">
+                </div>
+            </div>
+
+            <!-- Safety Section -->
+            <div id="safety" class="section" style="display: none;">
+                <h2>Safety</h2>
+                <div class="input-group">
+                    <label for="safety-input">Enter Safety Information:</label>
+                    <textarea id="safety-input" placeholder="Enter safety details"></textarea>
+                </div>
+                <div class="button-group">
+                    <button class="save-button" onclick="saveData('safety', 'safety-input')">Save</button>
+                    <button class="back-button" onclick="goToMain()">Back</button>
+                </div>
+            </div>
+
+            <!-- Production Section -->
+            <div id="production" class="section" style="display: none;">
+                <h2>Production</h2>
+                <div class="input-group">
+                    <label for="production-input">Enter Production Information:</label>
+                    <textarea id="production-input" placeholder="Enter production data"></textarea>
+                </div>
+                <div class="button-group">
+                    <button class="save-button" onclick="saveData('production', 'production-input')">Save</button>
+                    <button class="back-button" onclick="goToMain()">Back</button>
+                </div>
+                <ul class="production-links">
+                    <li><a href="https://barrickgold.sharepoint.com/sites/NevadaGoldmines/ls/carlin/Run%20Trackers/Forms/AllItems.aspx" target="_blank">Run Trackers</a></li>
+                    <li><a href="https://app.powerbi.com/links/3elN4fHGmh?ctid=c05261c1-4aae-48dc-b1f6-fde04ad750d9&pbi_source=linkShare" target="_blank">Power BI Production Report</a></li>
+                </ul>
+            </div>
+
+            <!-- Celebrate Success Section -->
+            <div id="celebrate" class="section" style="display: none;">
+                <h2>Celebrate Success</h2>
+                <div class="input-group">
+                    <label for="celebrate-input">What successes are we celebrating?</label>
+                    <input type="text" id="celebrate-input">
+                </div>
+                <button class="save-button" onclick="saveData('celebrate', 'celebrate-input', null)">Save</button>
+                <button class="back-button" onclick="goToMain()">Back</button>
+            </div>
+
+            <!-- Site Communication Section -->
+            <div id="site-comm" class="section" style="display: none;">
+                <h2>Site Communication</h2>
+                <div class="input-group">
+                    <label for="site-comm-input">Enter Site Communication:</label>
+                    <textarea id="site-comm-input"></textarea>
+                </div>
+                <button class="save-button" onclick="saveData('site-comm', 'site-comm-input', null)">Save</button>
+                <button class="back-button" onclick="goToMain()">Back</button>
+            </div>
+
+            <!-- Safety Focus Section -->
+            <div id="safety-focus" class="section" style="display: none;">
+                <h2>Safety Focus</h2>
+                <div class="input-group">
+                    <label for="safety-focus-input">Enter Safety Focus Information:</label>
+                    <textarea id="safety-focus-input" placeholder="Enter safety focus details"></textarea>
+                </div>
+                <div class="button-group">
+                    <button class="save-button" onclick="saveData('safety-focus', 'safety-focus-input')">Save</button>
+                    <button class="back-button" onclick="goToMain()">Back</button>
+                </div>
+                <ul class="safety-focus-links">
+                    <li><a href="https://barrickgold.sharepoint.com/sites/NevadaGoldmines/ims/safety/ss" target="_blank">Monthly Safety Spotlights</a></li>
+                </ul>
+            </div>
+
+            <!-- 3 W's Section -->
+            <div id="three-ws" class="section" style="display: none;">
+                <h2>3 W's (What, Who, When)</h2>
+                <div class="input-group">
+                    <label for="three-ws-input">Enter 3 W's (What, Who, When):</label>
+                    <textarea id="three-ws-input" placeholder="Enter What, Who, When"></textarea>
+                </div>
+                <button class="save-button" onclick="saveData('three-ws', 'three-ws-input')">Save</button>
+                <button class="back-button" onclick="goToMain()">Back</button>
+            </div>
+
+            <!-- Fatal Risks Section -->
+            <div id="default-content">
+                <img src="https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/frms.jpg" alt="Fatal Risks Image" id="fatal-risks-image" class="responsive-image">
+                <table class="fatal-risks-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Task</th>
+                            <th>Fatal Risks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="name-1" style="width: 95%;"></td>
+                            <td><input type="text" id="task-1" style="width: 95%;"></td>
+                            <td>
+                                <select id="risk-1" multiple size="5">
+                                    <option value="Stored Energy">Stored Energy</option>
+                                    <option value="Falling from Heights">Falling from Heights</option>
+                                    <option value="Lifting">Lifting</option>
+                                    <option value="Blasting & Explosives">Blasting & Explosives</option>
+                                    <option value="Hazardous Substances & Chemicals">Hazardous Substances & Chemicals</option>
+                                    <option value="Confined Spaces">Confined Spaces</option>
+                                    <option value="Mobile Equipment">Mobile Equipment</option>
+                                    <option value="Fall of Ground">Fall of Ground</option>
+                                    <option value="Rotating Equipment">Rotating Equipment</option>
+                                    <option value="Fire">Fire</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="name-2" style="width: 95%;"></td>
+                            <td><input type="text" id="task-2" style="width: 95%;"></td>
+                            <td>
+                                <select id="risk-2" multiple style="width: 100%;">
+                                    <option value="Stored Energy">Stored Energy</option>
+                                    <option value="Falling from Heights">Falling from Heights</option>
+                                    <option value="Lifting">Lifting</option>
+                                    <option value="Blasting & Explosives">Blasting & Explosives</option>
+                                    <option value="Hazardous Substances & Chemicals">Hazardous Substances & Chemicals</option>
+                                    <option value="Confined Spaces">Confined Spaces</option>
+                                    <option value="Mobile Equipment">Mobile Equipment</option>
+                                    <option value="Fall of Ground">Fall of Ground</option>
+                                    <option value="Rotating Equipment">Rotating Equipment</option>
+                                    <option value="Fire">Fire</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note" style="font-size: 12px; text-align: center;">* Hold the Ctrl button to select multiple Fatal Risks.</p>
+                <button id="save-fatal-risks" class="save-button" onclick="saveFatalRisksData()">Save</button>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar">
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('site-comm')">
+                SITE COMMUNICATION
+                <small id="site-comm-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('three-ws')">
+                3 W'S
+                <small id="three-ws-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="showSection('safety-focus')">
+                SAFETY FOCUS
+                <small id="safety-focus-preview"></small>
+            </a>
+            <a class="section-button" href="javascript:void(0);" onclick="openFatalRisksSlideshow()">
+                VIEW FATAL RISKS
+            </a>
+        </div>
+        
+    </div>
+
+    <div class="button-container">
+        <button class="new-button" onclick="newPage()">New</button>
+        <button class="home-button" onclick="goToMain()">Home</button>
+        <button class="export-button" onclick="exportData()">Export Data</button>
+        <button class="reset-button" onclick="resetPage()">Reset</button>
+    </div>
+
+    <!-- Hidden file input to trigger loading -->
+    <input type="file" id="file-loader" style="display: none;" onchange="triggerFileLoad(event)">
+
+    <!-- Shadowbox Modal -->
+    <div id="attachmentModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <iframe id="modal-iframe"></iframe>
+            <div class="modal-nav">
+                <button id="prev-attachment" onclick="navigateAttachment(-1)">Previous</button>
+                <button id="next-attachment" onclick="navigateAttachment(1)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crew and Shift Selection Modal -->
+    <div id="crewShiftModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCrewShiftModal()">&times;</span>
+            <h3>Select Crew and Shift</h3>
+            <select id="crewSelect">
+                <option value="">Select Crew</option>
+                <option value="Day">Day</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Orange">Orange</option>
+                <option value="Red">Red</option>
+            </select>
+            <select id="shiftSelect" style="display: none;">
+                <option value="">Select Shift</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+            <button onclick="confirmCrewShift()">Confirm</button>
+        </div>
+    </div>
+
+    <script src="https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/js/pre-start.js"></script>
+
+    <!-- Custom Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeMessageModal()">&times;</span>
+            <p id="messageModalText"></p>
+        </div>
+    </div>
+
+    <!-- Slideshow Modal -->
+    <div id="fatalRisksSlideshowModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFatalRisksSlideshow()">&times;</span>
+            <img id="slideshow-image" src="" alt="Slideshow Image" style="max-width: 100%; max-height: 70vh;">
+            <div class="modal-nav">
+                <button id="prev-slide" onclick="navigateSlideshow(-1)">Previous</button>
+                <button id="next-slide" onclick="navigateSlideshow(1)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatically run the newPage function when the page loads
+        window.onload = function() {
+            newPage(); // Call your newPage function here
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
