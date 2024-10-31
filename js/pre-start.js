@@ -438,16 +438,16 @@ document.getElementById('crewSelect').addEventListener('change', function() {
 
 // Array of image paths for the slideshow
 let fatalRisksImages = [
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Blasting & Explosives.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Confined Space.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Fall of Ground.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Falling from Heights.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Fire.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Hazardous Substances & Chemicals.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Lifting.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Mobile Equipment.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Rotating Equipment.jpg',
-    'https://barrickgold.sharepoint.com/:f:/r/sites/NevadaGoldmines/ls/carlin/Shared%20Documents/PreStart%20Board/images/fatal-risks/Stored Energy.jpg'
+    'images/fatal-risks/Blasting & Explosives.jpg',
+    'images/fatal-risks/Confined Space.jpg',
+    'images/fatal-risks/Fall of Ground.jpg',
+    'images/fatal-risks/Falling from Heights.jpg',
+    'images/fatal-risks/Fire.jpg',
+    'images/fatal-risks/Hazardous Substances & Chemicals.jpg',
+    'images/fatal-risks/Lifting.jpg',
+    'images/fatal-risks/Mobile Equipment.jpg',
+    'images/fatal-risks/Rotating Equipment.jpg',
+    'images/fatal-risks/Stored Energy.jpg'
 ];
 
 let currentSlideIndex = 0;
