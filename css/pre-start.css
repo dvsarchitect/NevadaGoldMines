@@ -804,3 +804,27 @@ select[multiple] {
     overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
+/* Base style for section titles */
+.section h2 {
+    font-size: 2.5vw; /* Responsive font size based on viewport width */
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Fallback for very small screens */
+@media (max-width: 768px) {
+    .section h2 {
+        font-size: 5vw; /* Increase font size scaling for smaller screens */
+    }
+}
+
+/* Fallback for very large screens */
+@media (min-width: 1200px) {
+    .section h2 {
+        font-size: 30px; /* Set a maximum font size */
+    }
+}
+
+
